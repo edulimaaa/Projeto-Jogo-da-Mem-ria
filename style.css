@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(image/Fundo.jpg);
+}
+
+h1 {
+  color: cornsilk;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+#cardBoard {
+  width: 650px;
+  height: 480px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.memory-card {
+  width: calc(25% - 10px); /*Criar 4 colunas de cards*/
+  height: 35%;
+  margin: 5px;
+  position: relative;
+  transform-style: preserve-3d; /*Efeito 3D*/
+  transition: 0.3s;
+}
+
+.memory-card:active {
+  transform: scale(0.97); /*Efeito click diminuir*/
+}
+
+.memory-card.flip {
+  transform: rotateY(180deg); /*Rodar em 180 graus*/
+}
+
+.front-face,
+.back-face {
+  background: rgb(95, 160, 109);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.front-face {
+  transform: rotateY(180deg);
+}
+
+.back-face:hover {
+  border: 5px solid red;
+}
+
+.modal-container {
+  width: 100vw; /*100% largura da tela*/
+  height: 100vh; /*100% altura da tela*/
+  background: rgba(0, 0, 0, 0.5); /*Fundo tranparente preto*/
+  position: fixed; /*Ficar por cima de todos itens da tela*/
+  top: 0; /*container todo em cima*/
+  left: 0; /*container todo pra esquerda*/
+  z-index: 2000; /*garantir que vai ficar por cima de todos itens*/
+  display: flex;
+  justify-content: center; /*centralizar container na vertical*/
+  align-items: center; /*centralizar container na horizontal*/
+  display: none;
+}
+
+.modal {
+  font-size: 25px;
+  background: white;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  border-radius: 10px;
+  border: 5px solid rosybrown;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+}
