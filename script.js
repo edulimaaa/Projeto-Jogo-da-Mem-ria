@@ -47,8 +47,7 @@ function flipCard() {
 }
 
 function checarCard() {
-
-  var container = document.querySelector('.modal-container');
+  var container = document.querySelector(".modal-container");
   const seCorresponde = firstCard.dataset.card === secondCard.dataset.card;
 
   !seCorresponde ? voltarCard() : resetCard(seCorresponde);
@@ -56,7 +55,7 @@ function checarCard() {
   if (seCorresponde) conte++;
   setTimeout(() => {
     if (conte == 6) {
-      container.style.display = 'flex';
+      container.style.display = "flex";
     }
   }, 900);
 }
@@ -87,4 +86,3 @@ function resetCard(seCorresponde = false) {
 }
 
 cards.forEach((card) => card.addEventListener("click", flipCard));
-
